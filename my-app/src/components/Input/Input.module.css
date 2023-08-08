@@ -1,0 +1,12 @@
+.input {
+	width: 70%;
+	border: 0;
+	border-bottom: 2px solid grey;
+	outline: 0;
+	transition: 0.1s;
+	text-align: center;
+	font-size: 1rem;
+}
+.input:focus {
+	font-size: 1.3rem;
+}
