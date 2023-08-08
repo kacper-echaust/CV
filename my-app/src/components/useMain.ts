@@ -1,6 +1,7 @@
-import { useState } from 'react'
+import { ChangeEvent, useState } from 'react'
 
-let previousTimeId: any
+let previousTimeId: ReturnType<typeof setTimeout>
+
 const useMain = () => {
 	const [city, setCity] = useState({
 		name: '',
@@ -9,27 +10,28 @@ const useMain = () => {
 		pressure: '',
 		icon: 0,
 	})
-	
-	const weatherChange = (e: any) => {
+
+	const handleCityChange = (event: ChangeEvent<HTMLInputElement>) => {
 		clearTimeout(previousTimeId)
 		previousTimeId = setTimeout(() => {
-			const value = e.target.value
+			const { value } = event.target
+
 			fetch(
 				`https://api.openweathermap.org/data/2.5/weather?q=${value}&lang=pl&appid=6fece57f4563a7a93cab48cf4721535c&units=metric`
 			)
-				.then(res => res.json())
-				.then(data =>
+				.then(response => response.json())
+				.then(data => {
 					setCity({
-						name: data.name,
-						temp: Math.round(data.main.temp),
-						humidity: data.main.humidity,
-						pressure: data.main.pressure,
-						icon: data.weather[0].id,
+						name: data?.name ?? 'Nie znaleziono miasta',
+						temp: Math.round(data?.main?.temp),
+						humidity: data?.main?.humidity,
+						pressure: data?.main?.pressure,
+						icon: data?.weather?.[0]?.id,
 					})
-				)
+				})
 				.catch(err => console.log(err))
 		}, 2000)
 	}
-	return { city, weatherChange }
+	return { city, handleCityChange }
 }
 export { useMain }
