@@ -1,0 +1,13 @@
+.containerDateCity {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	letter-spacing: 1px;
+}
+.date {
+	color: rgb(180, 180, 180);
+}
+.darkMode{
+	color: white;
+}

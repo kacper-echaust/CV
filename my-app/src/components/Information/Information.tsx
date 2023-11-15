@@ -4,7 +4,7 @@ type InformationProps = {
 	humidity: string
 	pressure: string
 }
-function Information({ temperature, humidity, pressure }: InformationProps) {
+function Information({ temperature, humidity, pressure}: InformationProps) {
 	return (
 		<div className={css.boxInfo}>
 			<p>Temperatura: {temperature} &#176;C</p>

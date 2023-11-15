@@ -1,0 +1,18 @@
+.iconThunderstorm {
+	background-image: url('./img/lightning-bolt-.png');
+}
+.iconRain {
+	background-image: url('./img/rain.png');
+}
+.iconSnow {
+	background-image: url('./img/snow.png');
+}
+.iconWind {
+	background-image: url('./img/wind.png');
+}
+.iconSun {
+	background-image: url('./img/sun.png');
+}
+.iconCloudy {
+	background-image: url('./img/cloudy.png');
+}

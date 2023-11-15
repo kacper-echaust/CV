@@ -1,4 +1,5 @@
 .input {
+	position: relative;
 	width: 70%;
 	border: 0;
 	border-bottom: 2px solid grey;
@@ -9,4 +10,16 @@
 }
 .input:focus {
 	font-size: 1.3rem;
+}
+.error {
+	position: absolute;
+	top: 30%;
+	color: rgb(162, 54, 54);
+}
+.darkMode {
+	background-color: transparent;
+	border-bottom: 2px solid white;
+}
+.darkMode::placeholder {
+	color: rgba(255, 255, 255, 0.7);
 }
